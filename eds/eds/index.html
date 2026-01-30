@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Shibboleth Embedded Discovery Service</title>
+
+  <!-- je nach Release liegt die CSS entweder in css/ oder root.
+       Bei dir ist idpselect.css im root verlinkt -> wir halten das konsistent. -->
+  <link rel="stylesheet" href="idpselect.css" />
+</head>
+<body>
+  <div id="idpSelect"></div>
+
+  <!-- CONFIG MUSS VORHER kommen -->
+  <script src="idpselect_config.js"></script>
+  <script src="idpselect.js"></script>
+
+  <!-- WICHTIG: UI explizit initialisieren -->
+  <script>
+    window.addEventListener("load", function () {
+      if (typeof IdPSelectUI === "function") {
+        var ui = new IdPSelectUI();
+        if (typeof ui.init === "function") ui.init();
+      }
+    });
+  </script>
+</body>
+</html>

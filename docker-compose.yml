@@ -1,0 +1,27 @@
+services:
+  sp:
+    build: ./sp
+    container_name: shib-sp
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - SP_ENTITY_ID=https://localhost/shibboleth
+      - SP_HOST=localhost
+      - EDS_URL=https://localhost/shibboleth-ds/
+      - METADATA_URL=https://mds.edugain.org/edugain-v2.xml
+    depends_on:
+      - eds
+    networks:
+      - shibnet
+
+  eds:
+    build: ./eds
+    container_name: shib-eds
+    hostname: eds
+    networks:
+      - shibnet
+
+networks:
+  shibnet:
+    driver: bridge
