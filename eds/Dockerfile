@@ -20,6 +20,9 @@ RUN apt-get update && apt-get install -y curl unzip \
 # Custom config
 COPY ./eds/idpselect_config.js /usr/share/nginx/html/idpselect_config.js
 COPY ./eds/idpselect.css /usr/share/nginx/html/css/idpselect.css
+COPY ./eds/css/ /usr/share/nginx/html/css/
+COPY ./eds/script/ /usr/share/nginx/html/script/
+COPY ./eds/images/ /usr/share/nginx/html/images/
 COPY ./eds/index.html /usr/share/nginx/html/index.html
 
 EXPOSE 8080

@@ -2,20 +2,46 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shibboleth Embedded Discovery Service</title>
-
-  <!-- je nach Release liegt die CSS entweder in css/ oder root.
-       Bei dir ist idpselect.css im root verlinkt -> wir halten das konsistent. -->
-  <link rel="stylesheet" href="idpselect.css" />
+  <link rel="stylesheet" href="css/custom.css" />
 </head>
 <body>
-  <div id="idpSelect"></div>
+  <div id="idpSelect">
+    <img src="images/EU_GREEN.png" alt="EU GREEN Logo" />
+    <h1>Log In to your Institution</h1>
+    <div id="searchableSelect">
+      <div class="inputRow">
+        <input type="text" id="searchableSelectInput" onKeyUp=filterInstitutions() placeholder="Search for your institution..."/>
+        <button onclick="resetSelection()">
+          <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g id="Complete">
+              <g id="x-circle">
+                <g>
+                  <circle cx="12" cy="12" data-name="--Circle" fill="none" id="_--Circle" r="10" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="14.5" x2="9.5" y1="9.5" y2="14.5"/>
+                  <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="14.5" x2="9.5" y1="14.5" y2="9.5"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <ul id="institutionList">
+      </ul>
+    </div>
+    <div class="row">
+      <button class="continue" onclick="continueSelection()">Continue</button>
+    </div>
+  </div>
 
-  <!-- CONFIG MUSS VORHER kommen -->
+  <div style="display: none" id="idpAlt"></div>
+
+  <!-- CONFIG -->
   <script src="idpselect_config.js"></script>
   <script src="idpselect.js"></script>
 
-  <!-- WICHTIG: UI explizit initialisieren -->
+  <!-- UI initialisieren -->
   <script>
     window.addEventListener("load", function () {
       if (typeof IdPSelectUI === "function") {
@@ -24,5 +50,9 @@
       }
     });
   </script>
+
+  <!-- Custom Script -->
+  <script src="script/main.js"></script>
+
 </body>
 </html>

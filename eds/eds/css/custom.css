@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    max-height: 1080px;
+    font-family: sans-serif;
+}
+
+#idpSelect {
+    text-align: left;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 25rem;
+}
+
+#idpSelect img {
+    width: 100%;
+    height: auto;
+}
+
+#idpSelect h1 {
+    margin: 0.5rem 0 1rem 0;
+    font-size: 1.25rem
+}
+
+#idpSelect .inputRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+#idpSelect .inputRow input{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ababab;
+    border-radius: 0.5rem;
+}
+
+#idpSelect .inputRow input:focus{
+    border: 1px solid aliceblue;
+}
+
+#idpSelect .inputRow button{
+    border: none;
+    background: none;
+    width: 24px;
+    height: 24px;
+}
+
+#idpSelect .inputRow button:hover{
+    opacity: 0.5;
+}
+
+#idpSelect ul {
+    height: 7.5rem;
+    margin: 0;
+    padding: 0;
+    overflow-y:scroll
+}
+
+#idpSelect ul li {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block: 0;
+    margin: 0;
+    width: 100%;
+    height: 2.5rem;
+    overflow-y: visible;
+    border-radius: 0.5rem;
+}
+
+#idpSelect ul li.selected {
+    background: #bbddff;
+}
+
+#idpSelect ul li button {
+    width: 100%;
+    height: 2.5rem;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ababab;
+    background: none;
+    padding: 0.5rem;
+}
+
+#idpSelect ul li button:hover {
+    background: #e2e2e2;
+}
+
+#idpSelect .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#idpSelect button.continue {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #1977d3;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+#idpSelect button.continue:hover {
+    opacity: 0.8;
+}

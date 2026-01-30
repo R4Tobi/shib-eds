@@ -37,10 +37,12 @@ function IdPSelectUIParms() {
   ];
 
   /* === UI === */
-  this.insertAtDiv = "idpSelect"; 
+  this.insertAtDiv = "idpAlt"; 
   this.showList = true;
   this.showSearch = true;
+  this.showListFirst = false;
   this.maxResults = 20;
+  this.ie6hack = [];
 }
 
 
