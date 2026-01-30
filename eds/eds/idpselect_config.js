@@ -18,7 +18,6 @@ function IdPSelectUIParms() {
 /* === ERLAUBTE SP-ENTITYIDs === */
   this.allowedSPs = [
     "https://localhost/shibboleth",
-    "https://sp.test.local/shibboleth"
   ];
 
   this.allowSPsWithoutMetadata = true;
@@ -26,7 +25,6 @@ function IdPSelectUIParms() {
   /* === Security === */
   this.returnWhiteList = [
     "^https://localhost(:[0-9]+)?/Shibboleth\\.sso/.*$",
-    "^https://sp\\.test\\.local/Shibboleth\\.sso/.*$"
   ];
 
   /* === Metadata === */
