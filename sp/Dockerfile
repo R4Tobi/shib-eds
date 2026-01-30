@@ -26,6 +26,10 @@ RUN mkdir -p /var/www/html/secure \
  && printf "PUBLIC OK\n" > /var/www/html/index.html \
  && printf "SHIB OK - protected\n" > /var/www/html/secure/index.html
 
+# if you dont want selfsigned certificates, uncomment these lines and provide certificates
+#COPY sp-key.pem /etc/shibboleth/sp-key.pem
+#COPY cp-cert.pem /etc/shibboleth/sp-cert.pem
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
